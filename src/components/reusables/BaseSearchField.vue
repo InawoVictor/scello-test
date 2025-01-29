@@ -15,13 +15,13 @@
 import { Icon } from "@iconify/vue";
 
 interface Props {
-    type: string
-    modelValue: string | number | object
+    type?: string
+    modelValue: string
     placeholder?: string
     label?: string
 }
 
-const props = defineProps<Props>()
+defineProps<Props>()
 
 const emit = defineEmits(['update:modelValue'])
 </script>

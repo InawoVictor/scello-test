@@ -17,6 +17,7 @@
         <div class="flex gap-4 items-center">
           <div class="relative">
             <button
+              type="button"
               class="flex border cursor-pointer border-solid items-center gap-1 text-[16px] text-[#25213B] border-purpleDark px-3 py-2 rounded-md"
               @click="showFilter = !showFilter"
             >
@@ -200,7 +201,6 @@
 <script lang="ts" setup>
 import type { Header, Item } from "vue3-easy-data-table";
 import {ref, computed} from "vue"
-import { Icon } from "@iconify/vue";
 
 const selectedTab = ref('all');
 const itemsSelected = ref<Item[]>([]);
@@ -222,7 +222,7 @@ const items: Item[] = [
   { name: "Giannis Antetokounmpo", email: "example@email.com", userStatus: "active", paymentStatus: "paid", amount: 150, id: "4"},
 ];
 
-const getSelectedTab = (value) => {    
+const getSelectedTab = (value: string) => {    
   if( value && value === "All"){
       selectedTab.value = "all"
   }else if(value && value === "Paid"){

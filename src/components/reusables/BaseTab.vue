@@ -8,7 +8,7 @@
                     ''
                 "
                 class="tab-header text-nowrap"
-                v-for="title in tabTitles" :key="title"
+                v-for="title in props.tabTitles" :key="title"
                 @click="selectTitle(title)"
             >
                 {{ title }}
@@ -22,14 +22,11 @@
 import {ref} from 'vue'
 
 const emit = defineEmits();
-const {tabTitles} = defineProps({
-    tabTitles: {
-        type: Array,
-        required: true,
-    }
-});
+const props = defineProps<{
+    tabTitles: string[];
+}>();
 
-const selectedTitle = ref(tabTitles[0]);
+const selectedTitle = ref(props.tabTitles[0]);
 
 const selectTitle = (title: string) => {
     selectedTitle.value = title
@@ -40,7 +37,6 @@ const selectTitle = (title: string) => {
 
 <style scoped>
 li{
-    /* transition: aftear .4s ease-in; */
     position: relative;
 }
 </style>
