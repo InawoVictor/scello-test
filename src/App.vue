@@ -212,7 +212,7 @@ const headers: Header[] = [
   { text: "USER STATUS", value: "userStatus"},
   { text: "PAYMENT STATUS", value: "paymentStatus"},
   { text: "AMOUNT", value: "amount", sortable: true},
-  { text: ":", value: "id"},
+  { text: "Action", value: "id"},
 ];
 
 const items: Item[] = [
