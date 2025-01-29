@@ -21,12 +21,9 @@ export default defineConfig({
     }),
     Components(
       {
-        dts: 'src/components.d.ts',
-        dirs: ['src/components'],
-        extensions: ['vue'],
-        deep: true,
-        exclude: ['**/node_modules/**'],
-        include: ['**/*.vue'],
+        extensions: ['vue', 'md'],
+      include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
+      dts: 'src/components.d.ts'
       }
     ),
     tailwindcss(),

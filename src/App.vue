@@ -3,7 +3,7 @@
     <!-- <AppHeader /> -->
     <h3 class="text-sm uppercase text-purpleDark font-bold">Table Heading</h3>
     <div class="flex border-b border-b-purpleDark items-center justify-between mt-5 ">
-      <base-tab 
+      <BaseTab 
         @update:title="getSelectedTab"
         :tabTitles="['All', 'Paid', 'Unpaid', 'Overdue']"
       />
@@ -72,7 +72,7 @@
             </div>
           </div>
 
-          <base-search-field
+          <BaseSearchField
             class="w-[329px] "
             v-model="searchQuery"
           />
@@ -97,13 +97,13 @@
         </template>
         <template #item-userStatus="item">
           <div class="flex flex-col gap-y-1 items-start">
-            <base-tag :status="item.userStatus" /> 
+            <BaseTag :status="item.userStatus" /> 
             <p class="text-[0.75rem] font-medium text-purpleDark">Last login: 14/APR/2020</p>         
           </div>
         </template>
         <template #item-paymentStatus="item">
           <div class="flex flex-col gap-y-1 items-start">
-            <base-tag :status="item.paymentStatus" /> 
+            <BaseTag :status="item.paymentStatus" /> 
             <p class="text-[0.75rem] text-[#25213B] font-medium">Paid on 15/APR/2020</p>         
           </div>
         </template>
