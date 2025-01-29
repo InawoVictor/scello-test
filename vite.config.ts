@@ -12,10 +12,8 @@ export default defineConfig({
   plugins: [
     vue(),
     AutoImport({ 
-      include: [
-        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-        /\.vue$/,
-        /\.vue\?vue/, // .vue
+      imports: [
+        'vue',
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: ['src/composables', 'src/store'],

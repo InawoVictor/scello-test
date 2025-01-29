@@ -8,5 +8,9 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppHeader: typeof import('./components/AppHeader.vue')['default']
+    BaseButton: typeof import('./components/reusables/BaseButton.vue')['default']
+    BaseSearchField: typeof import('./components/reusables/BaseSearchField.vue')['default']
+    BaseTab: typeof import('./components/reusables/BaseTab.vue')['default']
+    BaseTag: typeof import('./components/reusables/BaseTag.vue')['default']
   }
 }

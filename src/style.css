@@ -1,12 +1,24 @@
 @import url('https://fonts.cdnfonts.com/css/general-sans');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import "tailwindcss";
 
 
 @theme {
   --color-primary: #F2F0F9;
+  --color-txtDark: #25213B;
+  --color-greenBg: #007F00;
+  --color-purpleDark: #6E6893;
+  --color-purple: #6D5BD0;
+  --color-orangeBg: #FE964A;
+  --color-purpleBg: #8C62FF;
+  --color-yellowBg: #D4A701;
+  --color-redBg: #FD6A6A;
+  --color-greyBg: #6E6893;
+  --color-dark: #25213B;
 
 
   --font-generalSans:'General Sans', "sans-serif"; 
+  --font-inter:'Inter', "sans-serif"; 
 }
 
 @layer base {
@@ -21,6 +33,93 @@
   }
 
   body {
-    @apply font-normal  font-generalSans bg-primary transition-all duration-500 ease-in-out m-0 p-0;
+    @apply font-normal text-dark text-sm font-inter bg-primary transition-all duration-500 ease-in-out m-0 p-0;
   }
+
+  ul {
+    list-style-type: none;
+  }
+}
+
+@layer components {
+  /* Table Style */
+  .customize-table {
+    /* @apply font-jakarta font-semibold; */
+    --easy-table-border: none;
+    --easy-table-row-border: none;
+    --easy-table-header-font-size: 0.75rem;
+    --easy-table-header-height: 2.813rem;
+    --easy-table-header-font-color: #6E6893;
+    --easy-table-header-font-weight: 600;
+    --easy-table-header-background-color: #F4F2FF;
+
+    --easy-table-header-item-padding: 10px 15px;
+
+    --easy-table-body-row-font-color: #25213B;
+    --easy-table-body-row-height: 50px;
+    --easy-table-body-row-font-size: 14px;
+
+    --easy-table-body-row-hover-background-color: #fcfcfc;
+
+    --easy-table-body-item-padding: 10px 15px;
+
+    --easy-table-footer-font-color: #111827;
+    --easy-table-footer-font-size: 14px;
+    --easy-table-footer-padding: 0px 10px;
+    --easy-table-footer-height: 50px;
+
+    --easy-table-rows-per-page-selector-width: 70px;
+    --easy-table-rows-per-page-selector-option-padding: 10px;
+    --easy-table-rows-per-page-selector-z-index: 1;
+
+    --easy-table-scrollbar-track-color: #2d3a4f;
+    --easy-table-scrollbar-color: #6C7278;
+    --easy-table-scrollbar-thumb-color: #6C7278;
+    --easy-table-scrollbar-corner-color: #6C7278;
+
+    --easy-table-loading-mask-background-color: #2d3a4f;
+  }
+
+  /* Input Field */
+  .input-field {
+    @apply w-full shadow-none  focus:outline-none outline-none border-none px-2 py-3
+    focus:border-none rounded-md placeholder:text-purpleDark placeholder:text-[12px] font-medium text-sm ;
+  }
+
+  /* Custom Tab */
+  .tab-header {
+    @apply  text-sm  font-normal text-purpleDark p-6 py-3 cursor-pointer transition-all ease-in-out duration-200;
+  }
+  .selected-tab-header{
+    @apply text-purpleDark font-semibold  ;
+  }
+  .selected-tab-header::after {
+    content: "";
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @apply bg-purpleDark; 
+  }
+
+  .active-tag{
+    @apply bg-[#F4F0FF] rounded-[0.625rem] text-purpleBg text-[0.75rem] py-[2px] px-1 text-center font-medium;
+  }
+  .inactive-tag{
+    @apply bg-primary rounded-[0.625rem]  text-purpleDark text-[0.75rem] py-[2px] px-1 text-center font-medium;
+  }
+  .paid-tag{
+    @apply bg-[#E7F7EF] rounded-lg text-greenBg text-[0.75rem] py-[2px] px-1 text-center font-medium;
+  }
+  .unpaid-tag{
+    @apply bg-[#FEF7DC] rounded-lg  text-yellowBg text-[0.75rem] py-[2px] px-1 text-center font-medium;
+  }
+  .overdue-tag{
+    @apply bg-[#FFF0F0] rounded-lg  text-redBg text-[0.75rem] py-[2px] px-1 text-center font-medium;
+  }
+}
+
+@layer utilities {
+  
 }
